@@ -1,0 +1,44 @@
+<%- include('header') %>
+
+<div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="eight wide column">
+
+
+        <div class="ui cards">
+            <% posts.forEach(function (post) { %>
+            <div class="card">
+                <div class="content">
+                    <img
+                            class="right floated mini ui image"
+                            src="/img/<%= post.author.avatar %>">
+                    <div class="header">
+                        <%= post.author.name %> |
+                        <%= ({m: '男', f: '女', x: '保密'})[post.author.gender] %>
+                    </div>
+                    <div class="meta">
+                        <%= post.author.bio %>
+                    </div>
+                    <div class="description">
+                        <%= post.author.bio %>
+                    </div>
+                </div>
+                <!--
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui basic green button">
+                            <a href="/posts?author=<%= post.author._id %>">Decline</a>
+                        </div>
+                        <div class="ui basic red button">
+                            <a href="/posts?author=<%= post.author._id %>">Decline</a>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>
